@@ -54,8 +54,16 @@ export default function Footer() {
           <p className="text-xs text-gray-500">
             &copy; {year} {CLIENT_INFO.businessName}. All rights reserved.
           </p>
-          <p className="text-xs text-gray-600">
-            Built by KBL Web Solutions
+          <p className="text-xs text-gray-400">
+            Built by{" "}
+            <a
+              href="https://www.kblwebsolutions.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-brand-green transition-colors duration-200"
+            >
+              KBL Web Solutions
+            </a>
           </p>
         </div>
       </div>
