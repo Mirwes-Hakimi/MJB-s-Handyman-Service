@@ -49,10 +49,13 @@ export default function Footer() {
 
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-6 text-center">
+        {/* Copyright + builder credit */}
+        <div className="border-t border-gray-700 mt-8 pt-6 text-center space-y-1">
           <p className="text-xs text-gray-500">
             &copy; {year} {CLIENT_INFO.businessName}. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-600">
+            Built by KBL Web Solutions
           </p>
         </div>
       </div>
