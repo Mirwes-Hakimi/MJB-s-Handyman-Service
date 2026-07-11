@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 // Next.js reads this and injects <title> / <meta> into <head> automatically
 export const metadata: Metadata = {
@@ -25,6 +26,8 @@ export default function RootLayout({
         {/* flex-1 stretches main to fill all space between Navbar and Footer */}
         <main className="flex-1">{children}</main>
         <Footer />
+        {/* ChatWidget is a Client Component; fixed-position, renders on every page */}
+        <ChatWidget />
       </body>
     </html>
   );

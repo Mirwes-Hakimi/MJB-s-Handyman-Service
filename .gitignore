@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local lead storage (dev only; swap for DB/email before Vercel deploy)
+leads.json
