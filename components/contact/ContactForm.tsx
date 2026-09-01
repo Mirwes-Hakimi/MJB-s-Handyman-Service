@@ -3,6 +3,7 @@
 // and onSubmit/onChange event handlers — none of which work in Server Components
 
 import { useState } from "react";
+import { notifyLead } from "@/lib/notifyLead";
 
 // Mirrors exactly what the API route expects to receive
 type FormData = {
@@ -62,6 +63,10 @@ export default function ContactForm() {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.message || "Something went wrong. Please try again.");
       }
+
+      // Fire-and-forget: emails Mark directly from the browser (see lib/notifyLead.ts).
+      // Not awaited so a slow/failed email never blocks the success screen.
+      notifyLead({ ...formData, source: "form" });
 
       setStatus("success");
       setFormData(INITIAL_FORM); // Clear fields after success

@@ -14,15 +14,10 @@ export type Lead = {
   receivedAt: string;
 };
 
-// ─── SWAP POINT ──────────────────────────────────────────────────────────────
-// Everything below this line is the local-file implementation.
-// Before deploying to Vercel, replace saveLead's body with a Brevo email call
-// or a database insert. The API routes that call saveLead need no changes.
-//
 // WHY: Vercel runs API routes as serverless functions in temporary containers.
 // Any file written with fs.writeFile disappears when the container is recycled.
-// Local JSON storage only works in development (npm run dev).
-// ─────────────────────────────────────────────────────────────────────────────
+// Local JSON storage only works in development (npm run dev). The email to
+// Mark is sent separately, client-side — see lib/notifyLead.ts for why.
 
 const LEADS_FILE = path.join(process.cwd(), "leads.json");
 

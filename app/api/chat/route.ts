@@ -9,7 +9,7 @@ const SYSTEM_PROMPT = `You are a friendly assistant for MJB's Handyman Service, 
 owned by Mark Brommage in Santa Rosa, CA (Sonoma County). \
 Services: carpentry, window repair/installation, painting, plaster finishes, \
 custom kitchen and bathroom renovations. \
-Contact: (707) 727-3258 or Marbroman321@gmail.com. \
+Contact: (707) 727-3258 or mark@mjbshandymanservice.com. \
 Keep answers concise. For quotes or scheduling, encourage calling or using the callback form on the website.`;
 
 export async function POST(request: NextRequest) {

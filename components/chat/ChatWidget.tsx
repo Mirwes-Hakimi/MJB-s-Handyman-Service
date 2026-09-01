@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, FormEvent } from 'react';
+import { notifyLead } from '@/lib/notifyLead';
 
 type ChatState = 'greeting' | 'name' | 'phone' | 'job' | 'time' | 'captured' | 'qa';
 type Message = { from: 'bot' | 'user'; text: string };
@@ -80,6 +81,16 @@ export default function ChatWidget() {
           source: 'chat',
         }),
       });
+
+      // Fire-and-forget: emails Mark directly from the browser (see lib/notifyLead.ts).
+      notifyLead({
+        name: finalDraft.name,
+        phone: finalDraft.phone,
+        jobDescription: finalDraft.job || undefined,
+        preferredContactTime: finalDraft.time || undefined,
+        source: 'chat',
+      });
+
       setChatState('captured');
       addBot(
         `Thanks, ${finalDraft.name}! Mark will give you a call soon. ` +

@@ -4,7 +4,7 @@ const CLIENT_INFO = {
   ownerName:    "Mark J. Brommage",
   phone:        "(707) 727-3258",
   phoneHref:    "tel:+17077273258",
-  email:        "Marbroman321@gmail.com",
+  email:        "mark@mjbshandymanservice.com",
   serviceArea:  "Sonoma County, CA",
 };
 
