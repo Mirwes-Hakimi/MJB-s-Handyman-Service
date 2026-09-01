@@ -24,7 +24,8 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json({ message: "Lead saved." }, { status: 200 });
-  } catch {
+  } catch (err) {
+    console.error("POST /api/contact failed:", err);
     return NextResponse.json(
       { message: "Server error. Please try again." },
       { status: 500 }
